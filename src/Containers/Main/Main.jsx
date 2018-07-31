@@ -29,7 +29,7 @@ class Main extends React.Component {
       console.log("arrow Function");
 //      document.querySelector(".form-box").submit();
 
-      fetch("/", {
+      fetch("https://codingmastery.netlify.com/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: this.encode({ "form-name": "subscribeHome", "email": `${this.state.email}` })
