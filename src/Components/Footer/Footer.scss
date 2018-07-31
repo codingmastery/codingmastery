@@ -1,0 +1,55 @@
+.grid-container-footer {
+  display: grid;
+  grid-template-areas: "left-side left-side center center center center center right-side right-side";
+  height: 80px;
+  grid-gap: 10px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .left-side {
+    grid-area: left-side;
+    text-align: center;
+  }
+
+  .right-side {
+    grid-area: right-side;
+    text-align: center;
+    //margin: 0 auto;
+
+    .socialMediaIcon {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+      .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .center {
+    grid-area: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    cursor: default;
+    .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+}

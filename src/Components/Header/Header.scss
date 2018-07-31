@@ -1,0 +1,108 @@
+.grid-container-header {
+  display: grid;
+  grid-template-areas: "left-side left-side center center center center center right-side right-side";
+  height: 80px;
+  grid-gap: 10px;
+  border-bottom: 1px solid black;
+  .left-side {
+    grid-area: left-side;
+    text-align: center;
+  }
+
+  .right-side {
+    grid-area: right-side;
+    text-align: center;
+
+    ul {
+      list-style: none;
+      li {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .center {
+    grid-area: center;
+    text-align: center;
+
+    .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+
+      a {
+        font-family: "Montserrat", "Satisfy", "Cinzel Decorative", sans-serif;
+        text-decoration: none;
+        //font-size: 30px;
+        color: black;
+      }
+    }
+  }
+
+  .closedMenu,
+  .openMenu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 auto;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .nav {
+    //border-top: 1px solid black;
+    box-shadow: 1px 1px 15px slategray;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      .item {
+        padding: 10px;
+        text-align: center;
+        margin-top: 10px;
+        & a {
+          text-decoration: none;
+          font-family: "Montserrat", "Satisfy", "Cinzel Decorative", sans-serif;
+          //font-size: 20px;
+
+          color: black;
+          &.active {
+            color: dodgerblue;
+          }
+          & h3 {
+            margin: 0;
+          }
+        }
+      }
+      li {
+        .grid-container-header {
+          .center {
+            .content {
+              a {
+                text-decoration: none;
+                font-family: "Montserrat", "Satisfy", "Cinzel Decorative",
+                  sans-serif;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

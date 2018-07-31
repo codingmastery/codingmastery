@@ -1,0 +1,47 @@
+{
+  "name": "codingmastery",
+  "version": "1.0.0",
+  "description": "Coding Mastery website ",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "author": {
+    "name": "Ignacio Garcia Villanueva",
+    "email": "ignacio.gvillanueva@gmail.com",
+    "url": "https://codingmastery.netlify.com"
+  },
+  "keywords": [
+    "reactjs",
+    "parceljs",
+    "css-grid",
+    "flexbox",
+    "coding",
+    "webdev",
+    "web",
+    "dev"
+  ],
+  "bugs": {
+    "url": "https://github.com/codingmastery/codingmastery/issues"
+  },
+  "homepage": "https://github.com/codingmastery/codingmastery#readme", 
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "1.2.2",
+    "@fortawesome/free-brands-svg-icons": "5.2.0",
+    "@fortawesome/free-solid-svg-icons": "5.2.0",
+    "@fortawesome/react-fontawesome": "0.1.0",
+    "nodemailer": "4.6.7",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "redux": "4.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.6.1"
+  }
+}
+  
