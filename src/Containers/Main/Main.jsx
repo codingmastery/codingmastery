@@ -57,7 +57,7 @@ class Main extends React.Component {
               <h1> Learn to code </h1>
               <p>It's easy. We provide all the steps!</p>
               <form name="subscribe_home" netlify netlify-honeypot="bot-field" hidden>
-                <input type="email" name="email" />
+                <input type="email" name="email" value={this.state.email} />
               </form>
               <form
                 className="form-box"
