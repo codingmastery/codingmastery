@@ -61,6 +61,11 @@
 
   .nav {
     //border-top: 1px solid black;
+    animation: fromTopDownFadeIn;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-name: fromTopDownFadeIn;
+
     box-shadow: 1px 1px 15px slategray;
     background-color: white;
     position: absolute;
@@ -104,5 +109,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes fromTopDownFadeIn {
+  from {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

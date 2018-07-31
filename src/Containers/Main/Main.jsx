@@ -39,7 +39,8 @@ class Main extends React.Component {
               <form
                 className="form-box"
                 method="POST"
-                action="/send-email"
+                name='subscription_home'
+                netlify
                 onSubmit={this.handleSubmit}
               >
                 <label className="labelEmail" htmlFor="email">
