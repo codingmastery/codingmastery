@@ -32,7 +32,7 @@ class Main extends React.Component {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({ "form-name": "subscribe", ...this.state })
+        body: this.encode({ "form-name": "subscribe_home", "email": `${this.state.email}` })
       })
         .then(() => { 
           alert("Success!"); 
