@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./Main.scss";
 
 class Main extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       count: 0,
       submitted: false,
@@ -72,7 +72,14 @@ class Main extends React.Component {
                   name="email"
                   placeholder="Email"
                   value={this.state.email}
-                  onChange={ (e)=> this.setState(()=>({email: e.value}))}
+                  onChange={ 
+                    (e)=> { 
+                      e.persist();
+                      this.setState(
+                        (prevState)=> ({email: e.target.value})
+                      )
+                    }
+                  }
                 />
 
                 <div className="cta" onClick={this.handleSubmit}>
