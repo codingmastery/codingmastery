@@ -8,22 +8,43 @@ class Main extends React.Component {
     this.state = {
       count: 0,
       submitted: false,
-      success: false
+      success: false,
+      email: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   handleSubmit(e) {
-    //e.persist();
-    //e.preventDefault();
+    e.persist();
+    e.preventDefault();
 
     console.log("handleSumbit");
     if (this.state.count === 0) {
       console.log("arrow Function");
-      document.querySelector(".form-box").submit();
-      this.setState(prevState => ({
-        submitted: !prevState.submitted,
-        count: prevState.count + 1
-      }));
+//      document.querySelector(".form-box").submit();
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({ "form-name": "subscribe", "email": this.state.email })
+      })
+        .then(() => { 
+          alert("Success!"); 
+          this.setState(prevState => ({
+            submitted: !prevState.submitted,
+            count: prevState.count + 1
+          })); 
+        })
+        .catch(error => alert(error));
+
+
+      
     }
     return;
   }
@@ -38,7 +59,6 @@ class Main extends React.Component {
 
               <form
                 className="form-box"
-                method="POST"
                 name='subscription_home'
                 netlify
                 onSubmit={this.handleSubmit}
@@ -51,6 +71,8 @@ class Main extends React.Component {
                   id="email"
                   name="email"
                   placeholder="Email"
+                  value={this.state.email}
+                  onChange={ (e)=> this.setState(()=>({email: e.value}))}
                 />
 
                 <div className="cta" onClick={this.handleSubmit}>
