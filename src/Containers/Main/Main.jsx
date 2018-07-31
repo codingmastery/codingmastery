@@ -56,11 +56,11 @@ class Main extends React.Component {
             <React.Fragment>
               <h1> Learn to code </h1>
               <p>It's easy. We provide all the steps!</p>
-
+              <form name="subscribe_home" netlify netlify-honeypot="bot-field" hidden>
+                <input type="email" name="email" />
+              </form>
               <form
                 className="form-box"
-                name='subscription_home'
-                netlify
                 onSubmit={this.handleSubmit}
               >
                 <label className="labelEmail" htmlFor="email">
