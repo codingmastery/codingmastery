@@ -29,7 +29,7 @@ class Main extends React.Component {
       console.log("arrow Function");
 //      document.querySelector(".form-box").submit();
 
-      fetch("https://codingmastery.netlify.com/", {
+      fetch("/send_mail", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: this.encode({ "form-name": "subscribeHome", "email": `${this.state.email}` })
@@ -58,9 +58,6 @@ class Main extends React.Component {
             <React.Fragment>
               <h1> Learn to code </h1>
               <p>It's easy. We provide all the steps!</p>
-              <form name="subscribeHome" netlify netlify-honeypot="bot-field" hidden>
-                <input type="email" name="email" />
-              </form>
               <form
                 className="form-box"
                 onSubmit={this.handleSubmit}

@@ -16,10 +16,6 @@ const ContactUs = () => (
           <input type="text" id="contactEmail" name="contactEmail" />
         </div>
         <div>
-          <label htmlFor="emailSubject">Subject</label>
-          <input type="text" id="emailSubject" name="emailSubject" />
-        </div>
-        <div>
           <label htmlFor="emailMessage">Message</label>
           <textarea id="emailMessage" name="emailSubject" />
         </div>
