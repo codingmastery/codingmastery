@@ -36,7 +36,8 @@ class Main extends React.Component {
       })
         .then((response) => {
            
-          alert(`Success!\n${response}`); 
+          alert("Success!");
+          console.log(response); 
           this.setState(prevState => ({
             submitted: !prevState.submitted,
             count: prevState.count + 1
