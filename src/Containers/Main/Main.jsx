@@ -32,10 +32,11 @@ class Main extends React.Component {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({ "form-name": "subscribe_home", "email": `${this.state.email}` })
+        body: this.encode({ "form-name": "subscribeHome", "email": `${this.state.email}` })
       })
-        .then(() => { 
-          alert("Success!"); 
+        .then((response) => {
+           
+          alert(`Success!\n${response}`); 
           this.setState(prevState => ({
             submitted: !prevState.submitted,
             count: prevState.count + 1
@@ -56,8 +57,8 @@ class Main extends React.Component {
             <React.Fragment>
               <h1> Learn to code </h1>
               <p>It's easy. We provide all the steps!</p>
-              <form name="subscribe_home" netlify netlify-honeypot="bot-field" hidden>
-                <input type="email" name="email" value={this.state.email} />
+              <form name="subscribeHome" netlify netlify-honeypot="bot-field" hidden>
+                <input type="email" name="email" />
               </form>
               <form
                 className="form-box"
