@@ -13,7 +13,7 @@ const Footer = () => (
     </div>
     <div className="right-side">
       <div className="socialMediaIcon">
-        <a href="https://instagram.com/coding_mastery">
+        <a href="https://instagram.com/codingmastery">
           <FontAwesomeIcon
             className="content"
             icon={["fab", "instagram"]}
