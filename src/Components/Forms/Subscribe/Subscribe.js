@@ -69,6 +69,7 @@ class Subscribe extends React.Component {
             onSubmit={this.handleSubmit}
           >
             <div className="input">
+              <input type="hidden" name="form-name" value="subscribe" />
               <label className="labelEmail" htmlFor="email">
                 Enter you email
               </label>
