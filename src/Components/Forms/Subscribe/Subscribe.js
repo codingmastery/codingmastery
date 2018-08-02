@@ -53,25 +53,39 @@ class Subscribe extends React.Component {
     return;
   }
 
+  componentDidMount() {
+
+    //Making visible for netlify bots
+    let form = document.createElement('form');
+    let nameAttr = document.createAttribute('name');
+      nameAttr.value='subscribe';
+    let netlify = document.createAttribute('netlify');
+    let netlifyHoneyPot = document.createAttribute('netlify-honeypot');
+    netlifyHoneyPot.value='bot-field';
+    let hidden = document.createAttribute('hidden');
+    
+    form.setAttributeNode(nameAttr);
+    form.setAttributeNode(netlify);
+    form.setAttributeNode(netlifyHoneyPot)
+    form.setAttributeNode(hidden);
+    
+    document.body.insertBefore(form, document.getElementById('root'));
+
+  }
+
+  componentWillUnmount() {
+    //removing the form
+    let element = document.body.firstElementChild;
+    document.body.removeChild(element);
+
+  }
+
   render() {
     return (
       this.state.submitted === false ? (
         <React.Fragment>
           <h1> Learn to code </h1>
           <p>It's easy. We provide all the steps!</p>
-          <form name="subscribe" netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              value={this.state.email_}
-              onChange={e => {
-                e.persist();
-                this.setState(prevState => ({ email_: e.target.value }));
-              }}
-            />
-          </form>
           <form 
             name='subscribe'
             netlify 
@@ -103,26 +117,25 @@ class Subscribe extends React.Component {
           <p className="small">(Email will only be use to send updates)</p>
         </React.Fragment>
       ) : 
-      null
-      // this.state.success ? (
-      //   <div className="form-box form-success">
-      //     <h1>Super!</h1>
-      //     <p> You are one step closer to conquer the world! </p>
-      //     <p className="small">Mwahahahahaha</p>
-      //   </div>
-      // ) : (
-      //   <React.Fragment>
-      //     <div className="form-box form-failure">
-      //       <h1>Something went wrong!</h1>
-      //       <p>
-      //         Please try again in a few minutes.We are investigating the issue.
-      //       </p>
-      //     </div>
-      //     <Link className="link-cta" to="/">
-      //       Back Home
-      //     </Link>
-      //   </React.Fragment>
-      // )
+      this.state.success ? (
+        <div className="form-box form-success">
+          <h1>Super!</h1>
+          <p> You are one step closer to conquer the world! </p>
+          <p className="small">Mwahahahahaha</p>
+        </div>
+      ) : (
+        <React.Fragment>
+          <div className="form-box form-failure">
+            <h1>Something went wrong!</h1>
+            <p>
+              Please try again in a few minutes.We are investigating the issue.
+            </p>
+          </div>
+          <Link className="link-cta" to="/">
+            Back Home
+          </Link>
+        </React.Fragment>
+      )
     );
   }
 }
