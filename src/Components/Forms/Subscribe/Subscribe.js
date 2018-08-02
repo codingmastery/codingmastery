@@ -8,7 +8,8 @@ class Subscribe extends React.Component {
       count: 0,
       submitted: false,
       success: false,
-      email: ''
+      email: '',
+      email_: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -59,7 +60,17 @@ class Subscribe extends React.Component {
           <h1> Learn to code </h1>
           <p>It's easy. We provide all the steps!</p>
           <form name="subscribe" netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
-            <input type="email" name="email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              value={this.state.email_}
+              onChange={e => {
+                e.persist();
+                this.setState(prevState => ({ email_: e.target.value }));
+              }}
+            />
           </form>
           <form 
             name='subscribe'
@@ -91,25 +102,27 @@ class Subscribe extends React.Component {
           </button>
           <p className="small">(Email will only be use to send updates)</p>
         </React.Fragment>
-      ) : this.state.success ? (
-        <div className="form-box form-success">
-          <h1>Super!</h1>
-          <p> You are one step closer to conquer the world! </p>
-          <p className="small">Mwahahahahaha</p>
-        </div>
-      ) : (
-        <React.Fragment>
-          <div className="form-box form-failure">
-            <h1>Something went wrong!</h1>
-            <p>
-              Please try again in a few minutes.We are investigating the issue.
-            </p>
-          </div>
-          <Link className="link-cta" to="/">
-            Back Home
-          </Link>
-        </React.Fragment>
-      )
+      ) : 
+      null
+      // this.state.success ? (
+      //   <div className="form-box form-success">
+      //     <h1>Super!</h1>
+      //     <p> You are one step closer to conquer the world! </p>
+      //     <p className="small">Mwahahahahaha</p>
+      //   </div>
+      // ) : (
+      //   <React.Fragment>
+      //     <div className="form-box form-failure">
+      //       <h1>Something went wrong!</h1>
+      //       <p>
+      //         Please try again in a few minutes.We are investigating the issue.
+      //       </p>
+      //     </div>
+      //     <Link className="link-cta" to="/">
+      //       Back Home
+      //     </Link>
+      //   </React.Fragment>
+      // )
     );
   }
 }
