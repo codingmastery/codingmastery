@@ -20,7 +20,7 @@ class Contact extends React.Component {
 
   handleSubmit(e) {
     e.persist();
-    e.preventDefault();
+    
 
     console.log('handleSumbit');
     if (this.state.count === 0) {
@@ -44,14 +44,17 @@ class Contact extends React.Component {
           }));
         })
         .catch(error => alert(error));
+        
     }
+
+    e.preventDefault();
     return;
   }
   render() {
     return (
       <div className="form-container">
         <p> We will get back to you asap! </p>
-        <form className="form-box" method="POST">
+        <form className="form-box" netlify method="POST">
           <div className="input">
             <label htmlFor="contactName">Name</label>
             <input type="text" id="contactName" name="contactName" />
