@@ -55,28 +55,28 @@ class Subscribe extends React.Component {
 
   componentDidMount() {
 
-    //Making visible for netlify bots
-    let form = document.createElement('form');
-    let nameAttr = document.createAttribute('name');
-      nameAttr.value='subscribe';
-    let netlify = document.createAttribute('netlify');
-    let netlifyHoneyPot = document.createAttribute('netlify-honeypot');
-    netlifyHoneyPot.value='bot-field';
-    let hidden = document.createAttribute('hidden');
+    // //Making visible for netlify bots
+    // let form = document.createElement('form');
+    // let nameAttr = document.createAttribute('name');
+    //   nameAttr.value='subscribe';
+    // let netlify = document.createAttribute('netlify');
+    // let netlifyHoneyPot = document.createAttribute('netlify-honeypot');
+    // netlifyHoneyPot.value='bot-field';
+    // let hidden = document.createAttribute('hidden');
     
-    form.setAttributeNode(nameAttr);
-    form.setAttributeNode(netlify);
-    form.setAttributeNode(netlifyHoneyPot)
-    form.setAttributeNode(hidden);
+    // form.setAttributeNode(nameAttr);
+    // form.setAttributeNode(netlify);
+    // form.setAttributeNode(netlifyHoneyPot)
+    // form.setAttributeNode(hidden);
     
-    document.body.insertBefore(form, document.getElementById('app'));
+    // document.body.insertBefore(form, document.getElementById('app'));
 
   }
 
   componentWillUnmount() {
-    //removing the form
-    let element = document.body.firstElementChild;
-    document.body.removeChild(element);
+    // //removing the form
+    // let element = document.body.firstElementChild;
+    // document.body.removeChild(element);
 
   }
 
