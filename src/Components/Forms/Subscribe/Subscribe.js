@@ -69,7 +69,7 @@ class Subscribe extends React.Component {
     form.setAttributeNode(netlifyHoneyPot)
     form.setAttributeNode(hidden);
     
-    document.body.insertBefore(form, document.getElementById('root'));
+    document.body.insertBefore(form, document.getElementById('app'));
 
   }
 
