@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Subscribe extends React.Component {
   constructor(props) {
@@ -26,11 +27,13 @@ class Subscribe extends React.Component {
     if (this.state.count === 0) {
       console.log("arrow Function");
 //      document.querySelector(".form-box").submit();
-
+      const encodedData= this.encode({ "form-name": "subscribeHome", "email": `${this.state.email}` });
+      console.log('encoded data', encodedData);
+      
       fetch("/send_mail", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({ "form-name": "subscribeHome", "email": `${this.state.email}` })
+        body: encodedData
       })
         .then((response) => {
            
