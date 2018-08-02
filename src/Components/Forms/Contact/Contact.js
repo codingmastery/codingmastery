@@ -54,7 +54,7 @@ class Contact extends React.Component {
     return (
       <div className="form-container">
         <p> We will get back to you asap! </p>
-        <form className="form-box" netlify data-netlify method="POST">
+        <form className="form-box" netlify data-netlify form-name='contact' method="POST">
           <div className="input">
             <label htmlFor="contactName">Name</label>
             <input type="text" id="contactName" name="contactName" />

@@ -58,7 +58,7 @@ class Subscribe extends React.Component {
         <React.Fragment>
           <h1> Learn to code </h1>
           <p>It's easy. We provide all the steps!</p>
-          <form className="form-box" onSubmit={this.handleSubmit}>
+          <form form-name='subscribe' netlify data-netlify className="form-box" onSubmit={this.handleSubmit}>
             <div className="input">
               <label className="labelEmail" htmlFor="email">
                 Enter you email
